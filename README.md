@@ -32,21 +32,21 @@ The first thing we want to do is reading the values sent from your mobile app to
 
 We can easily do this by [recording HCI logs](https://medium.com/@charlie.d.anderson/how-to-get-the-bluetooth-host-controller-interface-logs-from-a-modern-android-phone-d23bde00b9fa).
 
-![](https://media.discordapp.net/attachments/999407861526438018/999634597581160529/Screenshot_20220721-131055_Settings.jpg?width=427&height=436)
+<img src="https://media.discordapp.net/attachments/999407861526438018/999634597581160529/Screenshot_20220721-131055_Settings.jpg?width=427&amp;height=436" width="250">
 
 Close every application, start recording the logs using the tutorial linked above.
 
 Power your RGB strips and connect to it using the app provided for your specific model.
 
-![](https://media.discordapp.net/attachments/999407861526438018/999633777112395887/Screenshot_20220721-130710_iStrip.jpg?width=968&height=336)
+<img src="https://media.discordapp.net/attachments/999407861526438018/999633777112395887/Screenshot_20220721-130710_iStrip.jpg?width=968&amp;height=336" width="250">
 
 When connected, change to every color, this makes sure the value of all colors are getting recorded.
 
-![](https://media.discordapp.net/attachments/999407861526438018/999634279384486049/Screenshot_20220721-130937_iStrip.jpg?width=968&height=426)
+<img src="https://media.discordapp.net/attachments/999407861526438018/999634279384486049/Screenshot_20220721-130937_iStrip.jpg?width=968&amp;height=426" width="250">
 
 When you recorded every color you will [generate HCI dumps](https://medium.com/@charlie.d.anderson/how-to-get-the-bluetooth-host-controller-interface-logs-from-a-modern-android-phone-d23bde00b9fa) we can use to read the data from further on on our computer.
 
-![](https://media.discordapp.net/attachments/999407861526438018/999635549205823498/Screenshot_20220721-131436_My_Files.jpg?width=790&height=436)
+<img src="https://media.discordapp.net/attachments/999407861526438018/999635549205823498/Screenshot_20220721-131436_My_Files.jpg?width=790&amp;height=436" width="250">
 
 Now we can send these logs over to our computer and start reading them!
 
@@ -56,18 +56,18 @@ When we generated a HCI dump containing the packets to change colors, we have to
 
 We will open the HCI dump in Wireshark
 
-![](https://media.discordapp.net/attachments/999407861526438018/999637013177307246/unknown.png)
+<p><img src="https://media.discordapp.net/attachments/999407861526438018/999637013177307246/unknown.png" width="250">
 
 Now we can see all data sent between your phone and the BLE controller from the RBG strip.
 
 We will filter these on **info** and search for the ones with **Sent Write Command**
-![](https://media.discordapp.net/attachments/999407861526438018/999651966630236251/unknown.png)
+img src="https://media.discordapp.net/attachments/999407861526438018/999651966630236251/unknown.png" width="250">
 
 Open them and copy all **values** into a text file.
 
-![](https://media.discordapp.net/attachments/999407861526438018/999655027662663760/unknown.png)
+<img src="https://media.discordapp.net/attachments/999407861526438018/999655027662663760/unknown.png" width="250">
 
-![](https://media.discordapp.net/attachments/999407861526438018/999655965026697338/unknown.png)
+<img src="https://media.discordapp.net/attachments/999407861526438018/999655965026697338/unknown.png" width="250">
 
 Now you have a list of encoded values that you can use to make an application with, but first we have to find out which value is which color.
 
@@ -75,18 +75,19 @@ Now you have a list of encoded values that you can use to make an application wi
 
 To find out what these values mean i used the app [nRF Connect app](https://play.google.com/store/apps/details?id=no.nordicsemi.android.mcp&hl=nl&gl=US)
 
-![](https://media.discordapp.net/attachments/999407861526438018/999657803645993031/Screenshot_20220721-144152_nRF_Connect.jpg?width=687&height=436)
+<img src="https://media.discordapp.net/attachments/999407861526438018/999657803645993031/Screenshot_20220721-144152_nRF_Connect.jpg?width=687&amp;height=436" width="250">
 
 Open the application and connect to your RGB BLE controller.
 
 Now you have to write the values to the right UUID (you can see this in the Wireshark frame)
 
-![](https://media.discordapp.net/attachments/999407861526438018/999658932345765928/unknown.png)
-![](https://media.discordapp.net/attachments/999407861526438018/999659272042467468/Screenshot_20220721-144859_nRF_Connect.jpg?width=306&height=436)
+<img src="https://media.discordapp.net/attachments/999407861526438018/999658932345765928/unknown.png" width="250">
 
-![](https://media.discordapp.net/attachments/999407861526438018/999660117727383592/unknown.png)
+<img src="https://media.discordapp.net/attachments/999407861526438018/999659272042467468/Screenshot_20220721-144859_nRF_Connect.jpg?width=306&amp;height=436" width="250">
 
-![](https://media.discordapp.net/attachments/999407861526438018/999660001339650169/Screenshot_20220721-145152_nRF_Connect.jpg?width=968&height=270)
+<img src="https://media.discordapp.net/attachments/999407861526438018/999660117727383592/unknown.png" width="250">
+
+<img src="https://media.discordapp.net/attachments/999407861526438018/999660001339650169/Screenshot_20220721-145152_nRF_Connect.jpg?width=968&amp;height=270" width="250">
 
 Now I noticed the RGB strip changed to yellow. This means this value corresperonds to the color yellow, you will do this with every value untill you have a complete list.
 
