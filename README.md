@@ -111,8 +111,6 @@ I made an example by controlling my RGB strip colors with a discord bot.
 
 ![](https://media.discordapp.net/attachments/999407861526438018/999409149332947065/Screenshot_20220720-221450_Gallery.jpg?width=196&height=436)
 
-### [Video in action](https://www.tiktok.com/@juicyhacker/video/7122552769936067886?is_from_webapp=1&sender_device=pc&web_id=7112045024872007174)
-
 For this example I used python with the [BleakCLient](https://github.com/hbldh/bleak), Asyncio and [Discord](https://discordpy.readthedocs.io/en/stable/) modules.
 
 ``` py
